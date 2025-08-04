@@ -27,13 +27,19 @@ export default function TestSocialConnectionsPage() {
   const runTests = async () => {
     try {
       setIsLoading(true)
-      const results = {
+      const results: {
+        tablesExist: boolean
+        policiesExist: boolean
+        functionsExist: boolean
+        canInsert: boolean
+        canQuery: boolean
+        error?: string
+      } = {
         tablesExist: false,
         policiesExist: false,
         functionsExist: false,
         canInsert: false,
-        canQuery: false,
-        error: undefined
+        canQuery: false
       }
 
       // Test 1: Check if tables exist
