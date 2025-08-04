@@ -310,17 +310,7 @@ export default function BusinessDashboardPage() {
             </div>
             
             {/* Social Media Connector */}
-            <SocialMediaConnector
-              businessId={businessId}
-              onAccountConnected={(account) => {
-                setSocialAccounts(prev => [...prev, account])
-                toast.success('Account connected successfully!')
-              }}
-              onAccountDisconnected={(accountId) => {
-                setSocialAccounts(prev => prev.filter(acc => acc.id !== accountId))
-                toast.success('Account disconnected successfully!')
-              }}
-            />
+            <SocialMediaConnector />
 
             {/* AI Post Generator */}
             <div className="mt-8">
@@ -443,4 +433,4 @@ export default function BusinessDashboardPage() {
       </div>
     </div>
   )
-} 
+}
